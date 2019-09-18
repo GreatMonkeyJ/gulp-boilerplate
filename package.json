@@ -1,7 +1,7 @@
 {
-  "name": "front-gulp",
-  "version": "1.0.0",
-  "description": "Front build up with gulp (prototype)",
+  "name": "gulp-boilerplate",
+  "version": "1.0.1",
+  "description": "Front build up with gulp",
   "main": "index.js",
   "scripts": {
     "serve": "gulp dev --development",
@@ -12,10 +12,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "Gulp",
+    "Gulp 4",
+    "Pug",
     "Sass",
-    "^ES6",
-    "Pug"
+    "ES6~"
   ],
   "author": "jwhyun <jwhyun@cafe24corp.com>",
   "repository": {
