@@ -6,9 +6,7 @@ const pug = require('gulp-pug');
 const fileinclude = require('gulp-file-include');
 const prettify = require('gulp-prettify');
 const prettifyOptions = require('./prettify');
-const mode = require('gulp-mode')({
-  modes: ['production', 'development', 'deploy'],
-});
+const mode = require('gulp-mode')({ modes: ['production', 'development', 'deploy'] });
 const sass = require('gulp-sass');
 const cssnano = require('gulp-cssnano');
 const rename = require('gulp-rename');
@@ -24,6 +22,7 @@ const buffer = require('vinyl-buffer');
 const del = require('del');
 const glob = require('glob');
 const stringify = require('js-stringify');
+
 
 /**
  * Mode Variables
@@ -50,6 +49,7 @@ const buildReplace = (onDeploy) => {
   });
 };
 
+console.log(buildPath);
 
 /**
  * BrowserSync handler
@@ -57,7 +57,7 @@ const buildReplace = (onDeploy) => {
 const live = (done) => {
   browserSync.init({
     server: {
-      baseDir: `./${project.dest}`,
+      baseDir: `./${project.default.dest}`,
       index: 'index.html',
       directory: false,
       https: false,
@@ -121,9 +121,7 @@ const pugs = () => {
 const styles = () => {
   return src(paths.styles.src)
     .pipe(sourcemaps.init())
-    .pipe(sass.sync({
-      // imagePath: '../',
-    }))
+    .pipe(sass.sync())
     .on('error', function (err) {
       console.log(err.toString());
       this.emit('end');
