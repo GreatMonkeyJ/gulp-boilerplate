@@ -1,0 +1,12 @@
+@mixin lang($type) {
+  [lang="#{$type}"] {
+    font-family:map-get($global-font-family, $type);
+  }
+
+  html:lang(#{$type}) {
+    input,
+    select,
+    textarea,
+    button { font-family:map-get($global-font-family, $type); }
+  }
+}
