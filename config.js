@@ -66,6 +66,7 @@ const paths = {
   fonts: {
     src: `${project.default.src}/fonts/**/*.{ttf,otf,woff,woff2,eot,svg}`,
     dest: `${project.default.dest}/fonts`,
+    wildcard: `${project.default.src}/fonts/**/*.{ttf,otf,woff,woff2,eot,svg}`,
   }
 };
 
