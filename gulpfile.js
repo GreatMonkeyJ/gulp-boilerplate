@@ -88,7 +88,7 @@ const html = () => {
     })
     .pipe(mode.production(buildReplace(isDeploy)))
     .pipe(prettify(prettifyOptions))
-    .pipe(!isProduction ? dest(paths.html.dest) : dest(buildPath))
+    .pipe(!isProduction ? dest(paths.html.dest) : dest(buildPath));
 };
 
 
@@ -210,7 +210,7 @@ const images = () => {
         ]
       })
     ]))
-    .pipe(!isProduction ? dest(paths.images.dest) : dest(`${buildPath}/${project.build.images}`))
+    .pipe(!isProduction ? dest(paths.images.dest) : dest(`${buildPath}/${project.build.images}`));
 }
 
 
