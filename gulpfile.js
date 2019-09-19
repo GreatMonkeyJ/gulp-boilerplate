@@ -8,7 +8,7 @@ const prettify = require('gulp-prettify');
 const prettifyOptions = require('./prettify');
 const mode = require('gulp-mode')({ modes: ['production', 'development', 'deploy'] });
 const sass = require('gulp-sass');
-const cssnano = require('gulp-cssnano');
+const cleanCSS = require('gulp-clean-css');
 const rename = require('gulp-rename');
 const replace = require('gulp-replace');
 const autoprefixer = require('gulp-autoprefixer');
@@ -126,7 +126,7 @@ const styles = () => {
       this.emit('end');
     })
     .pipe(autoprefixer())
-    .pipe(cssnano())
+    .pipe(cleanCSS({compatibility: 'ie8'}))
     .pipe(rename({
         basename: project.title,
         suffix: '.min'
